@@ -1,0 +1,74 @@
+1.HTTP 1.1 vs HTTP 2
+
+1.HTTP 1.1 uses TCP connections to move to destination while HTTP 2  uses Web page elements to move through destinations.
+2.HTTP 1.1 uses multiple TCP connections while HTTP 2 uses only 1 TCP connection.
+3.HTTP 1.1 is less used than HTTP 2
+4.HTTP 2 is faster
+
+2.Node JS vs Browser JS
+
+1.Node JS supports import while common JS supports require
+2.We get full system less access in Node JS but Common JS is sandboxed in the Browser
+3.Node JS use non-blocking IO for threads.
+4.Node JS could be run outside the browser while common JS could be run only in a browser.
+5.Node JS is used in Server side development while normal JS is used in Front End Development.
+
+3.What happens when you type a URL in an address bar.
+
+Each URL is mapped to an IP address. To Reach the IP server where the IP is After entering a URL in an address bar.  The first step is to check the caches to find a corresponding DNS mapping for the URL. Namely there are 4 caches in which a DNS lookup 
+is done - Browser cache, OS cache, Router Cache, ISP cache. If none of the cache's provide a proper result, the DNS query is forwarded to the DNS server of the ISP where the ISP 
+has a DNS Resolver which forwards the request to required nameservers and final result is passed back to the client through the DNS Resolver.
+
+4.How to copy by Value a composite data type?
+
+There are 3 ways to copy by value for composite data types.
+Using the spread ( ... ) operator.
+Using the Object.assign() method.
+Using the JSON.stringify() and JSON.parse() methods.
+
+5.Difference between Copy By Value and Copy By Reference.
+
+Pass by value
+Pass by value means that a copy of the actual parameter’s value is made in memory, i.e. the caller and callee have two independent variables with the same value. If the callee modifies the parameter value, the effect is not visible to the caller.
+
+Overview:
+Passes an argument by value.
+Callee does not have any access to the underlying element in the calling code.
+A copy of the data is sent to the callee.
+Changes made to the passed variable do not affect the actual value.
+
+ 6.JSON questions.
+ 
+ var cat = {
+ name: 'Fluffy',
+ activities: ['play', 'eat cat food'],
+ catFriends: [
+ {
+ name: 'bar',
+ activities: ['be grumpy', 'eat bread omblet'],
+ weight: 8,
+ furcolor: 'white'
+ }, 
+ {
+ name: 'foo',
+ activities: ['sleep', 'pre-sleep naps'],
+ weight: 3
+ }
+ ]
+}
+cat.height = "165 cm";
+cat.weight = "50kg";
+cat.name = 'Fluffyy';
+var weight = 0;
+for(var i=0;i<cat.catFriends.length;i++)
+{
+    console.log(cat.catFriends[i].activities)
+    console.log(cat.catFriends[i].name)
+    weight = weight + cat.catFriends[i].weight;
+    cat.catFriends[i].activities.push("Hunt")
+    cat.catFriends[i].activities.push("TV")
+    if(cat.catFriends[i].name === "bar")
+    cat.catFriends[i].furcolor = "blue";
+}
+console.log(weight)
+console.log(cat)
